@@ -1,0 +1,6 @@
+<odoo>
+    <menuitem id="menu_library_root" name="Library"/>
+    <menuitem id="menu_books" name="Books" parent="menu_library_root" action="action_library_book"/>
+    <menuitem id="menu_authors" name="Authors" parent="menu_library_root" action="action_library_author"/>
+    <menuitem id="menu_borrow" name="Borrowing Records" parent="menu_library_root" action="action_library_borrow"/>
+</odoo>

@@ -1,0 +1,43 @@
+<odoo>
+    <record id="view_form_borrow" model="ir.ui.view">
+        <field name="name">library.borrow.form</field>
+        <field name="model">library.borrow</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="book_id"/>
+                        <field name="partner_id"/>
+                        <field name="borrow_date"/>
+                        <field name="return_date"/>
+                        <field name="returned"/>
+                    </group>
+                    <footer>
+                        <button name="mark_as_returned" type="object" string="Mark as Returned" class="btn-primary"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_borrow" model="ir.ui.view">
+        <field name="name">library.borrow.tree</field>
+        <field name="model">library.borrow</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="book_id"/>
+                <field name="partner_id"/>
+                <field name="borrow_date"/>
+                <field name="return_date"/>
+                <field name="returned"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_library_borrow" model="ir.actions.act_window">
+        <field name="name">Borrowing Records</field>
+        <field name="res_model">library.borrow</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('returned', '=', False)]</field>
+    </record>
+</odoo>
